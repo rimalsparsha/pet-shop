@@ -1,0 +1,19 @@
+This is admin page.
+
+<br><br>
+<a href="/userlist">userlist</a><br><br>
+
+
+<br><br>
+<a href="/adminlogout">Logout</a><br><br>
+
+
+
+<fieldset>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        Price <input type="number" name="price"><br><br>
+        Petname <input type="text" name="petname"><br><br>
+        PetImage <input type="file" name="image" accept="image/*"><br><br>
+        <input type="submit" value="save">
+    </form>
+</fieldset>

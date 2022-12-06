@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PET SHOP </title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/shop.css">
+
+  </head>
+
+  <body>
+    <section id="tranding">
+      <div class="container">
+        <h3 class="text-center section-subheading">- Popular Pet -</h3>
+        <h3 class="text-center section-subheading"><a href="/" style="color: red;">- <ion-icon name="home"></ion-icon> HOME - </a></h3>
+        <h1 class="text-center section-heading">Choose Any Pet</h1>
+      </div>
+
+      <div class="container">
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper">
+
+
+            <!-- Slide-start -->
+            <% data.forEach((item) =>{ %>
+            <div class="swiper-slide tranding-slide">
+
+                <!-- Image -->
+                
+              <div class="tranding-slide-img">
+                
+                <img src="shop/<%= item.image %>" alt="<%= item.image %>">
+                
+              </div>
+              
+              <div class="tranding-slide-content">
+
+                <!-- Price -->
+                <h1 class="food-price">
+                  
+                  $<%= item.price %>
+                  
+                </h1>
+                <div class="tranding-slide-content-bottom">
+
+                    <!-- pet name -->
+                  <h2 class="food-name">
+                    
+                      <%= item.petname %>
+                      
+                  </h2>
+
+                  <h3 class="food-rating">
+                    <span><a href="#" style="color: rgb(28, 4, 161);">ADD TO CART<ion-icon name="cart" style="font-weight: 10px;"></ion-icon></a></span>
+                    <div class="rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+            <!-- Slide-end -->
+
+            
+          </div>
+
+          <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+
+</html>
+
+
+<script>
+    var TrandingSlider = new Swiper('.tranding-slider', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: 'auto',
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
+</script>
+
+<!-- Link for icon -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pet Care </title>
+
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="../css/updateProfile.css">
+
+
+        <!-- Javascript -->
+        <script 
+        src="https://kit.fontawesome.com/64d58efce2.js"
+        crossorigin="anonymous"
+      ></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1> Profile </h1>
+
+        <!-- Home page link -->
+
+         <br>
+         <br>
+        <div>
+        <a href="/" style="color: red; margin-left: 0px;"> <i> HOME </i> </a>
+        </div>
+        
+        <form method="post" action="/profile_update/<%= data.id%>">
+
+            <input type="hidden" name="id" value="<%= data.id%>">
+
+
+            <div class="row">
+
+                <div class="column">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder=" Full Name"
+                    value="<%= data.name%>">
+                </div>
+
+                <div class="column">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email"
+                    value="<%= data.email%>">
+                </div>
+                
+
+                <!-- save -->
+
+                    <input style= "width: 50px;"  type="submit" value="Save"  />
+
+                    <br>
+
+                    <!-- password change -->
+                <div>
+                    <a href="/change_password"> Password Change </i></a>
+                </div>
+
+                <!-- Delete account -->
+                <div>
+                <a href="/delete/<%= data.id %>"> Delete Account </i></a>
+                </div>
+
+            </div>
+
+            
+        </form>
+
+                    <!-- upload profile picture -->
+            <fieldset>
+                <form action="/profile" method="post" enctype="multipart/form-data">
+                    <div style="margin-left: 120px;">Upload Profile Picture</div> 
+                    <input type="file" name="image" id="file" style="margin-left: 50px;" accept="image/*">
+                    <input type="submit" value="save">
+                </form>
+                </fieldset>
+
+
+    </div>
+
+
+</body>
+</html>
